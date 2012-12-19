@@ -13,12 +13,13 @@ header {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    height: 50px;
+    height: 60px;
     background: #083157;
 }
 
 logo {
-    margin-top: 10px;
+    float: left;
+    margin-top: 6px;
     margin-left: 10px;
     width:277px;
     height:50px;
@@ -29,4 +30,81 @@ logo {
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
+}
+
+/*--CSS button--*/
+.greenbutton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #d9fbbe;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #d9fbbe;
+	box-shadow:inset 0px 1px 0px 0px #d9fbbe;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #b8e356), color-stop(1, #a5cc52) );
+	background:-moz-linear-gradient( center top, #b8e356 5%, #a5cc52 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#b8e356', endColorstr='#a5cc52');
+	background-color:#b8e356;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #83c41a;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Trebuchet MS;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #86ae47;
+}
+
+.greenbutton:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #a5cc52), color-stop(1, #b8e356) );
+	background:-moz-linear-gradient( center top, #a5cc52 5%, #b8e356 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#a5cc52', endColorstr='#b8e356');
+	background-color:#a5cc52;
+}
+
+.greenbutton:active {
+	position:relative;
+	top:1px;
+}
+
+/*--HTML Form Styles--*/
+.editor-label {
+    font-weight:bold;
+}
+
+/*--Nav Bar--*/
+#nav {
+    float:right;
+    margin-top:10px;
+    margin-right:10px;
+    font-size: 1.5em;
+}
+
+#nav ul
+{
+list-style-type:none;
+margin:0;
+padding:0;
+overflow:hidden;
+}
+
+#nav li
+{
+float:left;
+}
+
+#nav a:link,a:visited
+{
+display:block;
+width:80px;
+margin-right:20px;
+color:#FFFFFF;
+text-align:center;
+padding:4px;
+text-decoration:none;
+}
+
+#nav a:hover,a:active
+{
+    border-bottom: solid 2px #FFFFFF;
 }

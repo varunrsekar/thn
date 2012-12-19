@@ -24,6 +24,14 @@
 <body>
     <header>
         <logo><img src="/Images/thn.png" /></logo>
+        <div id="nav">
+            <ul>
+                <li>@Html.ActionLink("Home","/")</li>
+                <li>@Html.ActionLink("Sign up","","signup")</li>
+                <li>@Html.ActionLink("Login","","login")</li>
+
+            </ul>
+        </div>
     </header>
     @RenderBody()
 
