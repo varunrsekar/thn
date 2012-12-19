@@ -43,10 +43,13 @@ namespace thn.Controllers
 
             user.password = encryptPassword(user.password);
 
-            if((temp.password == user.password)&&(temp.email == user.email))
+            if ((temp.password == user.password) && (temp.email == user.email))
             {
-                FormsAuthentication.SetAuthCookie(user.email,false);
-
+                FormsAuthentication.SetAuthCookie(user.email, false);
+                return RedirectToAction("Index", "dashboard");
+            }
+            else
+                ModelState.AddModelError("","Username or password does not exist.");
             return View();
         }
 

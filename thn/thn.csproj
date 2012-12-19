@@ -122,6 +122,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\loginController.cs" />
     <Compile Include="Controllers\signupController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -220,6 +221,9 @@
     <Content Include="Views\signup\_Layout.cshtml" />
     <Content Include="Views\signup\_ViewStart.cshtml" />
     <Content Include="Views\signup\Index.cshtml" />
+    <Content Include="Views\login\Index.cshtml" />
+    <Content Include="Views\login\_ViewStart.cshtml" />
+    <Content Include="Views\login\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
