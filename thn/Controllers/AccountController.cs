@@ -39,17 +39,17 @@ namespace thn.Controllers
         }
 
         [HttpPost]
-        public ActionResult Signup(user user)
+        public ActionResult Signup(user input)
         {
             if (ModelState.IsValid)
             {
-                user.password = encryptPassword(user.password);
-                db.users.Add(user);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                    input.password = encryptPassword(input.password);
+                    db.users.Add(input);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
             }
 
-            return View(user);
+            return View(input);
         }
 
         protected override void Dispose(bool disposing)
