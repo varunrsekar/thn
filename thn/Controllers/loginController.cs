@@ -39,7 +39,7 @@ namespace thn.Controllers
         [HttpPost]
         public ActionResult Index(user user)
         {
-            user temp = db.users.Find(user.email);
+            user temp = db.users.Where(b => b.email == user.email).FirstOrDefault();
 
             user.password = encryptPassword(user.password);
 

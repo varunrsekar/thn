@@ -41,7 +41,7 @@ namespace thn.Controllers
                     input.password = encryptPassword(input.password);
                     db.users.Add(input);
                     db.SaveChanges();
-                    return RedirectToAction("/");
+                    return RedirectToAction("Index","Home");
             }
 
             return View(input);
