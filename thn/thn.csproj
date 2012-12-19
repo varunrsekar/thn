@@ -218,12 +218,10 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\_Layout.cshtml" />
     <Content Include="Views\Home\_ViewStart.cshtml" />
-    <Content Include="Views\signup\_Layout.cshtml" />
     <Content Include="Views\signup\_ViewStart.cshtml" />
     <Content Include="Views\signup\Index.cshtml" />
     <Content Include="Views\login\Index.cshtml" />
     <Content Include="Views\login\_ViewStart.cshtml" />
-    <Content Include="Views\login\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

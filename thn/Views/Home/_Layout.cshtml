@@ -23,10 +23,10 @@
 </head>
 <body>
     <header>
-        <logo><img src="/Images/thn.png" /></logo>
+        <logo><a href="@Url.Action("", "Home")"><img src="/Images/thn.png" /></a></logo>
         <div id="nav">
             <ul>
-                <li>@Html.ActionLink("Home","/")</li>
+                <li>@Html.ActionLink("Home","","Home")</li>
                 <li>@Html.ActionLink("Sign up","","signup")</li>
                 <li>@Html.ActionLink("Login","","login")</li>
 
