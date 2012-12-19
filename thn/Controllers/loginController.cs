@@ -1,22 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using System.Data;
+using System.Data.Entity;
 using System.Web.Mvc;
 using thn.Models;
+using System.Web.Security;
 
 namespace thn.Controllers
 {
-    public class AccountController : Controller
+    public class loginController : Controller
     {
         private userDBContext db = new userDBContext();
-
-        public ActionResult Index()
-        {
-            return View(db.users.ToList());
-        }
+        //
+        // GET: /login/
 
         public static string encryptPassword(string password)
         {
@@ -33,29 +31,24 @@ namespace thn.Controllers
             }
         }
 
-        public ActionResult Signup()
+        public ActionResult Index()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult Signup(user input)
+        public ActionResult Index(user user)
         {
-            if (ModelState.IsValid)
+            user temp = db.users.Find(user.email);
+
+            user.password = encryptPassword(user.password);
+
+            if((temp.password == user.password)&&(temp.email == user.email))
             {
-                    input.password = encryptPassword(input.password);
-                    db.users.Add(input);
-                    db.SaveChanges();
-                    return RedirectToAction("Index");
-            }
+                FormsAuthentication.SetAuthCookie(user.email,false);
 
-            return View(input);
+            return View();
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            db.Dispose();
-            base.Dispose(disposing);
-        }
     }
 }

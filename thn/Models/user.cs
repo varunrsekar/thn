@@ -42,6 +42,7 @@ namespace thn.Models
         public string lastName { get; set; }
         [Key]
         [Required(ErrorMessage = "Email is required.")]
+        [RegularExpression(".+\\@.+\\..+", ErrorMessage = "Please enter a valid email address")]
         [Display(Name = "Email:")]
         public string email { get; set; }
         [Required(ErrorMessage = "Zip code is required.")]
@@ -54,7 +55,7 @@ namespace thn.Models
 
         [Required(ErrorMessage = "Re enter your password")]
         [DataType(DataType.Password)]
-        [Compare("password")]
+        [Compare("password",ErrorMessage = "The password and confirmation password do not match.")]
         [Display(Name = "Confirm password:")]
         public string comparePassword { get; set; }
 
