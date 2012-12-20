@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace thn.Controllers
 {
-    public class HomeController : Controller
+    public class homeController : Controller
     {
         //
         // GET: /Home/

@@ -25,6 +25,10 @@ logo {
     height:50px;
 }
 
+table {
+    width:100%;
+}
+
 #content {
     width: 80%;
     margin-left: auto;
@@ -107,4 +111,26 @@ text-decoration:none;
 #nav a:hover,a:active
 {
     border-bottom: solid 2px #FFFFFF;
+}
+
+/*--Validation errors--*/
+.validation-summary-errors {
+    margin:0;
+    margin-bottom: 20px;
+    width:100%;
+    border: solid 1px #f00;
+    background-color: #ff6a00;
+    text-align: center;
+    padding-top:5px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    font-weight: bold;
+    color: #FFFFFF;
+
+}
+
+.validation-summary-errors ul {
+        list-style-type: none;
 }

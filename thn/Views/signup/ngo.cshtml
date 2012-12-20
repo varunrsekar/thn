@@ -1,7 +1,7 @@
-﻿@model thn.Models.user
+﻿@model thn.Models.vieworg
 
 @{
-    ViewBag.Title = "Login";
+    ViewBag.Title = "Signup";
 }
 
 @section extrascripts{
@@ -13,14 +13,21 @@
 }
 
 <div id="content">
-
-<h2>Login to The Halo Network</h2>
+    <h2>Sign up for The Halo Network as an organization</h2>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>@ViewBag.Error</legend>
+        <legend></legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.orgName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.orgName)
+            @Html.ValidationMessageFor(model => model.orgName)
+        </div>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.email)
@@ -31,6 +38,14 @@
         </div>
 
         <div class="editor-label">
+            @Html.LabelFor(model => model.zipcode)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.zipcode)
+            @Html.ValidationMessageFor(model => model.zipcode)
+        </div>
+
+        <div class="editor-label">
             @Html.LabelFor(model => model.password)
         </div>
         <div class="editor-field">
@@ -38,12 +53,21 @@
             @Html.ValidationMessageFor(model => model.password)
         </div>
 
+        <div class="editor-label">
+            @Html.LabelFor(model => model.comparePassword)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.comparePassword)
+            @Html.ValidationMessageFor(model => model.comparePassword)
+        </div>
+
         <p>
-            <input type="submit" value="Login" class="greenbutton"/>
+            <input type="submit" value="Sign up" class="greenbutton" />
         </p>
     </fieldset>
 }
-    </div>
+
+</div>
 <div id="modal" style="display:none">
     <table cellspacing="100">
         
@@ -57,3 +81,6 @@
         </tr>
     </table>
 </div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

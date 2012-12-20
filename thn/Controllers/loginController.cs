@@ -12,7 +12,8 @@ namespace thn.Controllers
 {
     public class loginController : Controller
     {
-        private userDBContext db = new userDBContext();
+        private userDBContext dbuser = new userDBContext();
+        private orgDBContext dborg = new orgDBContext();
         //
         // GET: /login/
 
@@ -39,17 +40,33 @@ namespace thn.Controllers
         [HttpPost]
         public ActionResult Index(user user)
         {
-            user temp = db.users.Where(b => b.email == user.email).FirstOrDefault();
+            user userExists = dbuser.users.Where(b => b.email == user.email).FirstOrDefault();
+            org orgExists = dborg.orgs.Where(a => a.email == user.email).FirstOrDefault();
 
             user.password = encryptPassword(user.password);
 
-            if ((temp.password == user.password) && (temp.email == user.email))
+            if (orgExists != null)
             {
-                FormsAuthentication.SetAuthCookie(user.email, true);
-                return RedirectToAction("Index", "dashboard");
+
+                if ((orgExists.password == user.password) && (orgExists.email == user.email))
+                {
+                    FormsAuthentication.SetAuthCookie(user.email, true);
+                    return RedirectToAction("Index", "cpanel");
+                }
+                else
+                    ModelState.AddModelError("", "Username or password does not exist.");
             }
             else
-                ModelState.AddModelError("","Username or password does not exist.");
+            {
+
+                if ((userExists.password == user.password) && (userExists.email == user.email))
+                {
+                    FormsAuthentication.SetAuthCookie(user.email, true);
+                    return RedirectToAction("Index", "dashboard");
+                }
+                else
+                    ModelState.AddModelError("", "Username or password does not exist.");
+            }
             return View();
         }
 

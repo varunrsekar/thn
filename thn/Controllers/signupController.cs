@@ -31,7 +31,7 @@ namespace thn.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("individual");
         }
         
         public ActionResult individual()
@@ -44,16 +44,21 @@ namespace thn.Controllers
         {
             if (ModelState.IsValid)
             {
-                    user temp = dbuser.users.Where(b => b.email == input.email).FirstOrDefault();
-                    if (temp == null)
+                    org orgExists = dborg.orgs.Where(a => a.email == input.email).FirstOrDefault(); 
+                    user userExists = dbuser.users.Where(b => b.email == input.email).FirstOrDefault();
+                    if ((userExists == null)&&(orgExists == null))
                     {
                         input.password = encryptPassword(input.password);
                         dbuser.users.Add(input);
                         dbuser.SaveChanges();
                         return RedirectToAction("Index", "login");
                     }
+                    else if (userExists != null)
+                    {
+                        ModelState.AddModelError("","An individual user already exists for the email address.");
+                    }
                     else
-                        ModelState.AddModelError("", "A user already exists for the email.");
+                        ModelState.AddModelError("", "An organization already has an account using this email address.");
             }
 
             return View();
@@ -71,16 +76,21 @@ namespace thn.Controllers
         {
             if (ModelState.IsValid)
             {
-                org temp = dborg.orgs.Where(b => b.email == input.email).FirstOrDefault();
-                if (temp == null)
+                org orgExists = dborg.orgs.Where(a => a.email == input.email).FirstOrDefault();
+                user userExists = dbuser.users.Where(b => b.email == input.email).FirstOrDefault();
+                if ((userExists == null) && (orgExists == null))
                 {
                     input.password = encryptPassword(input.password);
                     dborg.orgs.Add(input);
                     dborg.SaveChanges();
                     return RedirectToAction("Index", "login");
                 }
+                else if (userExists != null)
+                {
+                    ModelState.AddModelError("", "An individual user already exists for the email address.");
+                }
                 else
-                    ModelState.AddModelError("", "A user already exists for the email.");
+                    ModelState.AddModelError("", "An organization already has an account using this email address.");
             }
 
             return View();

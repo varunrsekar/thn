@@ -2,7 +2,7 @@
     ViewBag.Title = "The Halo Network";
 }
 
-@section scripts{
+@section extrascripts{
     <script type="text/javascript">
         $(document).ready(function () {
             $('.bxslider').bxSlider({
@@ -11,6 +11,9 @@
                 mode: "fade",
                 pager: false
             });
+        });
+        jQuery(document).ready(function ($) {
+            $('a[rel*=facebox]').facebox()
         });
     </script>
 }
@@ -21,3 +24,17 @@
     <li><img src="/Images/slider/3.jpg" /></li>
     <li><img src="/Images/slider/4.jpg" /></li>
 </ul>
+
+<div id="modal" style="display:none">
+    <table cellspacing="100">
+        
+        <tr>
+            <td><a href="@Url.Action("individual", "signup")"><img src="/Images/icons/user.png" /></a></td>
+            <td><a href="@Url.Action("ngo", "signup")"><img src="/Images/icons/ngo.png" /></a></td>
+        </tr>
+        <tr>
+            <td><center><font size="20px">Individual</font></center></td>
+            <td><center><font size="20px">Organization</font></center></td>
+        </tr>
+    </table>
+</div>

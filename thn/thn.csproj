@@ -124,7 +124,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\loginController.cs" />
     <Compile Include="Controllers\signupController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\homeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -223,7 +223,7 @@
     <Content Include="Views\signup\individual.cshtml" />
     <Content Include="Views\login\Index.cshtml" />
     <Content Include="Views\login\_ViewStart.cshtml" />
-    <Content Include="Views\signup\Index.cshtml" />
+    <Content Include="Views\signup\ngo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
