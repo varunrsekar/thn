@@ -128,6 +128,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\org.cs" />
     <Compile Include="Models\user.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -219,9 +220,10 @@
     <Content Include="Views\Home\_Layout.cshtml" />
     <Content Include="Views\Home\_ViewStart.cshtml" />
     <Content Include="Views\signup\_ViewStart.cshtml" />
-    <Content Include="Views\signup\Index.cshtml" />
+    <Content Include="Views\signup\individual.cshtml" />
     <Content Include="Views\login\Index.cshtml" />
     <Content Include="Views\login\_ViewStart.cshtml" />
+    <Content Include="Views\signup\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -16,7 +16,7 @@ namespace thn.Controllers
         //
         // GET: /login/
 
-        public static string encryptPassword(string password)
+        private static string encryptPassword(string password)
         {
             try
             {
@@ -45,7 +45,7 @@ namespace thn.Controllers
 
             if ((temp.password == user.password) && (temp.email == user.email))
             {
-                FormsAuthentication.SetAuthCookie(user.email, false);
+                FormsAuthentication.SetAuthCookie(user.email, true);
                 return RedirectToAction("Index", "dashboard");
             }
             else

@@ -2,6 +2,19 @@
     ViewBag.Title = "The Halo Network";
 }
 
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.bxslider').bxSlider({
+                auto: true,
+                pause: 4000,
+                mode: "fade",
+                pager: false
+            });
+        });
+    </script>
+}
+
 <ul class="bxslider">
     <li><img src="/Images/slider/1.jpg" /></li>
     <li><img src="/Images/slider/2.jpg" /></li>

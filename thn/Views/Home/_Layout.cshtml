@@ -9,17 +9,9 @@
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/Scripts/jquery.bxslider.js")
+    @RenderSection("extras", required: false)
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('.bxslider').bxSlider({
-                auto: true,
-                pause: 4000,
-                mode: "fade",
-                pager: false
-            });
-        });
-    </script>
+    @RenderSection("scripts", required: false)
 </head>
 <body>
     <header>
@@ -35,7 +27,5 @@
     </header>
     @RenderBody()
 
-    
-    @RenderSection("scripts", required: false)
 </body>
 </html>

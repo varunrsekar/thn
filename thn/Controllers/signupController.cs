@@ -11,9 +11,10 @@ namespace thn.Controllers
 {
     public class signupController : Controller
     {
-        private userDBContext db = new userDBContext();
+        private userDBContext dbuser = new userDBContext();
+        private orgDBContext dborg = new orgDBContext();
 
-        public static string encryptPassword(string password)
+        private static string encryptPassword(string password)
         {
             try
             {
@@ -32,24 +33,67 @@ namespace thn.Controllers
         {
             return View();
         }
+        
+        public ActionResult individual()
+        {
+            return View();
+        }
 
         [HttpPost]
-        public ActionResult Index(user input)
+        public ActionResult individual(user input)
         {
             if (ModelState.IsValid)
             {
-                    input.password = encryptPassword(input.password);
-                    db.users.Add(input);
-                    db.SaveChanges();
-                    return RedirectToAction("Index","Home");
+                    user temp = dbuser.users.Where(b => b.email == input.email).FirstOrDefault();
+                    if (temp == null)
+                    {
+                        input.password = encryptPassword(input.password);
+                        dbuser.users.Add(input);
+                        dbuser.SaveChanges();
+                        return RedirectToAction("Index", "login");
+                    }
+                    else
+                        ModelState.AddModelError("", "A user already exists for the email.");
             }
 
-            return View(input);
+            return View();
         }
 
+        
+        
+        public ActionResult ngo()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ngo(org input)
+        {
+            if (ModelState.IsValid)
+            {
+                org temp = dborg.orgs.Where(b => b.email == input.email).FirstOrDefault();
+                if (temp == null)
+                {
+                    input.password = encryptPassword(input.password);
+                    dborg.orgs.Add(input);
+                    dborg.SaveChanges();
+                    return RedirectToAction("Index", "login");
+                }
+                else
+                    ModelState.AddModelError("", "A user already exists for the email.");
+            }
+
+            return View();
+        }
+
+        
+        
         protected override void Dispose(bool disposing)
         {
-            db.Dispose();
+            dbuser.Dispose();
+            base.Dispose(disposing);
+
+            dborg.Dispose();
             base.Dispose(disposing);
         }
     }
