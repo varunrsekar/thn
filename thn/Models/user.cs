@@ -27,6 +27,9 @@ namespace thn.Models
         [Display(Name = "Password:")]
         [DataType(DataType.Password)]
         public string password { get; set; }
+        public double lat { get; set; }
+        public double lng { get; set; }
+
 
     }
 
