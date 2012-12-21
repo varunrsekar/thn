@@ -125,6 +125,7 @@
     <Compile Include="Controllers\accountController.cs" />
     <Compile Include="Controllers\cpanelController.cs" />
     <Compile Include="Controllers\dashboardController.cs" />
+    <Compile Include="Controllers\EditProfileController.cs" />
     <Compile Include="Controllers\loginController.cs" />
     <Compile Include="Controllers\logoutController.cs" />
     <Compile Include="Controllers\signupController.cs" />
@@ -134,6 +135,7 @@
     </Compile>
     <Compile Include="Models\account.cs" />
     <Compile Include="Models\org.cs" />
+    <Compile Include="Models\Profile.cs" />
     <Compile Include="Models\user.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
