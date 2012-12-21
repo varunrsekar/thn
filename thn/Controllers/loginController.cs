@@ -34,6 +34,7 @@ namespace thn.Controllers
 
         public ActionResult Index()
         {
+            @ViewBag.login = false;
             return View();
         }
 
@@ -50,7 +51,7 @@ namespace thn.Controllers
 
                 if ((orgExists.password == user.password) && (orgExists.email == user.email))
                 {
-                    FormsAuthentication.SetAuthCookie(user.email, true);
+                    FormsAuthentication.SetAuthCookie(user.email, false);
                     return RedirectToAction("Index", "cpanel");
                 }
                 else

@@ -122,12 +122,17 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\accountController.cs" />
+    <Compile Include="Controllers\cpanelController.cs" />
+    <Compile Include="Controllers\dashboardController.cs" />
     <Compile Include="Controllers\loginController.cs" />
+    <Compile Include="Controllers\logoutController.cs" />
     <Compile Include="Controllers\signupController.cs" />
     <Compile Include="Controllers\homeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\account.cs" />
     <Compile Include="Models\org.cs" />
     <Compile Include="Models\user.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -216,14 +221,23 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\_Layout.cshtml" />
-    <Content Include="Views\Home\_ViewStart.cshtml" />
+    <Content Include="Views\home\Index.cshtml" />
+    <Content Include="Views\home\_Layout.cshtml" />
+    <Content Include="Views\home\_ViewStart.cshtml" />
     <Content Include="Views\signup\_ViewStart.cshtml" />
     <Content Include="Views\signup\individual.cshtml" />
     <Content Include="Views\login\Index.cshtml" />
     <Content Include="Views\login\_ViewStart.cshtml" />
     <Content Include="Views\signup\ngo.cshtml" />
+    <Content Include="Views\dashboard\Index.cshtml" />
+    <Content Include="Views\cpanel\Index.cshtml" />
+    <Content Include="Views\dashboard\_Layout.cshtml" />
+    <Content Include="Views\dashboard\_ViewStart.cshtml" />
+    <Content Include="Views\cpanel\_Layout.cshtml" />
+    <Content Include="Views\cpanel\_ViewStart.cshtml" />
+    <Content Include="Views\login\_Layout.cshtml" />
+    <Content Include="Views\account\forgotPassword.cshtml" />
+    <Content Include="Views\account\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

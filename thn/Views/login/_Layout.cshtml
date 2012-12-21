@@ -23,20 +23,6 @@
             <ul>
                 <li>@Html.ActionLink("Home","","home")</li>
                 <li><a href="#modal" rel="facebox">Signup</a></li>
-                <li>
-                    @{
-                        if(@ViewBag.login)
-                        {
-                            @Html.ActionLink("Logout","","logout")
-                            
-                        }
-                        else
-                        {
-                            @Html.ActionLink("Login","","login")
-                        }
-                    }
-
-                </li>
 
             </ul>
         </div>
