@@ -23,6 +23,9 @@ namespace thn.Models
         [Required(ErrorMessage = "Zip code is required.")]
         [Display(Name = "Zip code:")]
         public long zipcode { get; set; }
+        [Required(ErrorMessage = "Country is required.")]
+        [Display(Name = "Country:")]
+        public string country { get; set; }
         [Required(ErrorMessage = "Password is required.")]
         [Display(Name = "Password:")]
         [DataType(DataType.Password)]
@@ -51,6 +54,9 @@ namespace thn.Models
         [Required(ErrorMessage = "Zip code is required.")]
         [Display(Name = "Zip code:")]
         public long zipcode { get; set; }
+        [Required(ErrorMessage = "Country is required.")]
+        [Display(Name = "Country:")]
+        public string country { get; set; }
         [Required(ErrorMessage = "Password is required.")]
         [Display(Name = "Password:")]
         [DataType(DataType.Password)]

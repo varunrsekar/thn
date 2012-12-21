@@ -10,6 +10,7 @@ using System.Net.Mail;
 
 namespace thn.Controllers
 {
+
     public class accountController : Controller
     {
         private userDBContext dbuser = new userDBContext();
@@ -30,6 +31,13 @@ namespace thn.Controllers
             }
         }
 
+        private static string truncate(string str, int maxLength)
+        {
+            if (str == null) return null;
+            return str.Substring(0, Math.Min(maxLength, str.Length));
+        }
+
+
         public ActionResult forgotPassword()
         {
             @ViewBag.login = false;
@@ -45,6 +53,7 @@ namespace thn.Controllers
             if (orgExists != null)
             {
                 var newPassword = encryptPassword(orgExists.password);
+                newPassword = truncate(newPassword,5);
                 var dbPassword = encryptPassword(newPassword);
 
                 orgExists.password = dbPassword;
@@ -57,7 +66,7 @@ namespace thn.Controllers
                 SmtpServer.EnableSsl = true;
 
                 mail.From = new MailAddress("admin@thehalonetwork.org");
-                mail.To.Add("maniganz@gmail.com");
+                mail.To.Add(orgExists.email);
                 mail.Subject = "New password from The Halo Network";
                 mail.Body = "Hi, your new password is " + newPassword;
 
@@ -66,6 +75,7 @@ namespace thn.Controllers
             else if (userExists != null)
             {
                 var newPassword = encryptPassword(userExists.password);
+                newPassword = truncate(newPassword, 5);
                 var dbPassword = encryptPassword(newPassword);
 
                 userExists.password = dbPassword;

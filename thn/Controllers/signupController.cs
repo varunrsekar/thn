@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using thn.Models;
+using System.Globalization;
 
 namespace thn.Controllers
 {
@@ -29,6 +30,16 @@ namespace thn.Controllers
             }
         }
 
+        private SelectList GetCountrySelectList()
+        {
+
+            var countries = Country.GetCountries();
+            return new SelectList(countries.ToArray(),
+                                "Code",
+                                "Name");
+
+        }
+
         public ActionResult Index()
         {
             return RedirectToAction("individual");
@@ -36,6 +47,8 @@ namespace thn.Controllers
         
         public ActionResult individual()
         {
+            @ViewBag.login = false;
+            ViewBag.country = GetCountrySelectList();
             return View();
         }
 
@@ -44,6 +57,7 @@ namespace thn.Controllers
         {
             if (ModelState.IsValid)
             {
+                @ViewBag.login = false;
                     org orgExists = dborg.orgs.Where(a => a.email == input.email).FirstOrDefault(); 
                     user userExists = dbuser.users.Where(b => b.email == input.email).FirstOrDefault();
                     if ((userExists == null)&&(orgExists == null))
@@ -68,6 +82,9 @@ namespace thn.Controllers
         
         public ActionResult ngo()
         {
+            @ViewBag.login = false;
+            ViewBag.country = GetCountrySelectList();
+            
             return View();
         }
 
