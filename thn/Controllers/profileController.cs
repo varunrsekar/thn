@@ -7,20 +7,28 @@ using thn.Models;
 
 namespace thn.Controllers
 {
-    public class editProfileController : Controller
+    public class profileController : Controller
     {
         private profileDBContext dbprof = new profileDBContext();
 
         //
         // GET: /EditProfile/
 
-        public ActionResult Index()
+        public ActionResult editProfile()
         {
-            return View();
+            bool auth = Request.IsAuthenticated;
+
+            if (auth)
+            {
+                @ViewBag.login = true;
+                return View();
+            }
+
+            return RedirectToAction("", "login");
         }
 
         [HttpPost]
-        public ActionResult Index(profile prof)
+        public ActionResult editProfile(profile prof)
         {
             prof.email = User.Identity.Name;
             if (ModelState.IsValid)

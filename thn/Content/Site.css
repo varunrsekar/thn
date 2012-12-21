@@ -29,9 +29,6 @@ table {
     width:100%;
 }
 
-fieldset a {
-    color: #083157;
-}
 
 #content {
     width: 80%;
@@ -41,7 +38,23 @@ fieldset a {
 }
 
 #content a {
+    color: blue;
+}
+
+h2 {
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
     color: #083157;
+    font-weight: 600;
+}
+
+.left-float {
+    float: left;
+    width: 50%;
+}
+
+.right-float {
+    float: right;
+    width: 40%;
 }
 
 /*--CSS button--*/
@@ -141,4 +154,13 @@ text-decoration:none;
 
 .validation-summary-errors ul {
         list-style-type: none;
+}
+
+.field-validation-error {
+    color: red;
+}
+
+/*--Form elements--*/
+label {
+    font-weight: normal;
 }

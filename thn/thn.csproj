@@ -125,7 +125,7 @@
     <Compile Include="Controllers\accountController.cs" />
     <Compile Include="Controllers\cpanelController.cs" />
     <Compile Include="Controllers\dashboardController.cs" />
-    <Compile Include="Controllers\editProfileController.cs" />
+    <Compile Include="Controllers\profileController.cs" />
     <Compile Include="Controllers\loginController.cs" />
     <Compile Include="Controllers\logoutController.cs" />
     <Compile Include="Controllers\signupController.cs" />
@@ -222,7 +222,6 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\home\Index.cshtml" />
     <Content Include="Views\home\_Layout.cshtml" />
     <Content Include="Views\home\_ViewStart.cshtml" />
@@ -240,6 +239,8 @@
     <Content Include="Views\login\_Layout.cshtml" />
     <Content Include="Views\account\forgotPassword.cshtml" />
     <Content Include="Views\account\_ViewStart.cshtml" />
+    <Content Include="Views\profile\editProfile.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

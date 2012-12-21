@@ -5,12 +5,43 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/bxslider")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/Scripts/jquery.bxslider.js")
+    <script src="~/Scripts/facebox.js"></script>
+    <link href="~/Content/facebox.css" rel="stylesheet" type="text/css" />
+    @RenderSection("extras", required: false)
+
+    @RenderSection("extrascripts", required: false)
+    @RenderSection("Scripts", required: false)
 </head>
 <body>
+    <header>
+        <logo><a href="@Url.Action("", "home")"><img src="/Images/thn.png" /></a></logo>
+        <div id="nav">
+            <ul>
+                <li>@Html.ActionLink("Home","","home")</li>
+                <li><a href="#modal" rel="facebox">Signup</a></li>
+                <li>
+                    @{
+                        if(@ViewBag.login)
+                        {
+                            @Html.ActionLink("Logout","","logout")
+                            
+                        }
+                        else
+                        {
+                            @Html.ActionLink("Login","","login")
+                        }
+                    }
+
+                </li>
+
+            </ul>
+        </div>
+    </header>
     @RenderBody()
 
-    @Scripts.Render("~/bundles/jquery")
-    @RenderSection("scripts", required: false)
 </body>
 </html>

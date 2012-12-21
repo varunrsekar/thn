@@ -13,14 +13,15 @@
 }
 
 <div id="content">
-
+    <div class="left-float">
+        
 <h2>Sign up for The Halo Network as an individual</h2>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>@ViewBag.Error</legend>
+        <legend></legend>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.firstName)
@@ -50,8 +51,9 @@
             @Html.LabelFor(model => model.country)
         </div>
         <div class="editor-field">
-            <select data-val="true" data-val-required="Country is required." id="country" name="country">                <option value="AF">Afghanistan</option>
-	<option value="AX">Åland Islands</option>
+            <select data-val="true" data-val-required="Country is required." id="country" name="country">
+                <option value="AF">Afghanistan</option>
+	            <option value="AX">Åland Islands</option>
 	<option value="AL">Albania</option>
 	<option value="DZ">Algeria</option>
 	<option value="AS">American Samoa</option>
@@ -331,8 +333,9 @@
             <input type="submit" value="Sign up" class="greenbutton"/>
         </p>
     </fieldset>
-}
+    }
     </div>
+</div>
 <div id="modal" style="display:none">
     <table cellspacing="100">
         
