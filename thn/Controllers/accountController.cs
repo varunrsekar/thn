@@ -54,11 +54,12 @@ namespace thn.Controllers
                 SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
                 SmtpServer.Credentials = new System.Net.NetworkCredential("admin@thehalonetwork.org", "godspeed123");
                 SmtpServer.Port = 587;
+                SmtpServer.EnableSsl = true;
 
-                mail.From = new MailAddress("myemail@gmail.com");
-                mail.To.Add(orgExists.email);
+                mail.From = new MailAddress("admin@thehalonetwork.org");
+                mail.To.Add("maniganz@gmail.com");
                 mail.Subject = "New password from The Halo Network";
-                mail.Body = "Hi, your new pass word is " + newPassword;
+                mail.Body = "Hi, your new password is " + newPassword;
 
                 SmtpServer.Send(mail);
             }
@@ -74,14 +75,18 @@ namespace thn.Controllers
                 SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
                 SmtpServer.Credentials = new System.Net.NetworkCredential("admin@thehalonetwork.org", "godspeed123");
                 SmtpServer.Port = 587;
+                SmtpServer.EnableSsl = true;
 
-                mail.From = new MailAddress("myemail@gmail.com");
+                mail.From = new MailAddress("admin@thehalonetwork.org");
                 mail.To.Add(userExists.email);
                 mail.Subject = "New password from The Halo Network";
-                mail.Body = "Hi, your new pass word is " + newPassword;
+                mail.Body = "Hi, your new password is " + newPassword;
+
+                SmtpServer.Send(mail);
             }
             else
                 ModelState.AddModelError("","Email does not exist.");
+            @ViewBag.login = false;
             return View();
         }
 
