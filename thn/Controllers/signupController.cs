@@ -13,6 +13,7 @@ namespace thn.Controllers
     {
         private userDBContext dbuser = new userDBContext();
         private orgDBContext dborg = new orgDBContext();
+        private profileDBContext dbprof = new profileDBContext();
 
         private static string encryptPassword(string password)
         {
@@ -47,11 +48,25 @@ namespace thn.Controllers
                 @ViewBag.login = false;
                     org orgExists = dborg.orgs.Where(a => a.email == input.email).FirstOrDefault(); 
                     user userExists = dbuser.users.Where(b => b.email == input.email).FirstOrDefault();
+                    profile newProf = new profile();
+
                     if ((userExists == null)&&(orgExists == null))
                     {
                         input.password = encryptPassword(input.password);
                         dbuser.users.Add(input);
                         dbuser.SaveChanges();
+
+                        newProf.email = input.email;
+                        newProf.firstName = input.firstName;
+                        newProf.lastName = input.lastName;
+                        newProf.country = input.country;
+                        newProf.zipcode = input.zipcode;
+                        newProf.searchRadius = 100;
+                        newProf.about = null;
+                        newProf.tags = null;
+                        dbprof.profiles.Add(newProf);
+                        dbprof.SaveChanges();
+
                         return RedirectToAction("Index", "login");
                     }
                     else if (userExists != null)
