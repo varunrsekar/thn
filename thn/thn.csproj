@@ -134,7 +134,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\account.cs" />
-    <Compile Include="Models\country.cs" />
     <Compile Include="Models\org.cs" />
     <Compile Include="Models\Profile.cs" />
     <Compile Include="Models\user.cs" />

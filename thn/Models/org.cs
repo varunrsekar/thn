@@ -17,6 +17,9 @@ namespace thn.Models
         [Required(ErrorMessage = "Email is required.")]
         [Display(Name = "Email:")]
         public string email { get; set; }
+        [Required(ErrorMessage = "Country is required.")]
+        [Display(Name = "Country:")]
+        public string country { get; set; }
         [Required(ErrorMessage = "Zip code is required.")]
         [Display(Name = "Zip code:")]
         public long zipcode { get; set; }
@@ -38,6 +41,9 @@ namespace thn.Models
         [Required(ErrorMessage = "Email is required.")]
         [Display(Name = "Email:")]
         public string email { get; set; }
+        [Required(ErrorMessage = "Country is required.")]
+        [Display(Name = "Country:")]
+        public string country { get; set; }
         [Required(ErrorMessage = "Zip code is required.")]
         [Display(Name = "Zip code:")]
         public long zipcode { get; set; }
