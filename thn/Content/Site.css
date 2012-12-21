@@ -17,6 +17,16 @@ header {
     background: #083157;
 }
 
+footer {
+    width: 80%;
+    padding-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    clear: both;
+    font-size: 1em;
+    text-align: center;
+}
+
 logo {
     float: left;
     margin-top: 6px;
@@ -38,7 +48,7 @@ table {
 }
 
 #content a {
-    color: blue;
+    color: #083157;
 }
 
 h2 {
@@ -46,6 +56,16 @@ h2 {
     color: #083157;
     font-weight: 600;
 }
+
+h2 a{
+    text-decoration: none;
+    color: #083157;
+}
+
+h2 a:hover {
+    border-bottom: solid 2px #083157;
+}
+
 
 .left-float {
     float: left;

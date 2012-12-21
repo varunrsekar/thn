@@ -20,6 +20,12 @@ namespace thn.Controllers
         {
             bool auth = Request.IsAuthenticated;
 
+            string email = User.Identity.Name;
+            user userExists = db.users.Where(b => b.email == email).FirstOrDefault();
+
+            if (userExists == null)
+                auth = false;
+
             if (auth)
             {
                 @ViewBag.login = true;

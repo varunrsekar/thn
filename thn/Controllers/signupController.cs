@@ -67,6 +67,7 @@ namespace thn.Controllers
                         dbprof.profiles.Add(newProf);
                         dbprof.SaveChanges();
 
+                        
                         return RedirectToAction("Index", "login");
                     }
                     else if (userExists != null)
@@ -101,6 +102,8 @@ namespace thn.Controllers
                     input.password = encryptPassword(input.password);
                     dborg.orgs.Add(input);
                     dborg.SaveChanges();
+
+                    
                     return RedirectToAction("Index", "login");
                 }
                 else if (userExists != null)

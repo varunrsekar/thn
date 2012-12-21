@@ -17,6 +17,12 @@ namespace thn.Controllers
         {
             bool auth = Request.IsAuthenticated;
 
+            string email = User.Identity.Name;
+            org orgExists = db.orgs.Where(b => b.email == email).FirstOrDefault();
+
+            if (orgExists == null)
+                auth = false;
+
             if (auth)
             {
                 @ViewBag.login = true;
