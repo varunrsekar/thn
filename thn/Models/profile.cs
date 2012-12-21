@@ -9,6 +9,22 @@ namespace thn.Models
 {
     public class profile
     {
+        [Display(Name = "First Name:")]
+        public string firstName { get; set; }
+
+        [Display(Name = "Last Name:")]
+        public string lastName { get; set; }
+
+        [Key]
+        [Display(Name = "Email:")]
+        public string email { get; set; }
+
+        [Display(Name = "Zip code:")]
+        public long zipcode { get; set; }
+
+        [Display(Name = "Country:")]
+        public string country { get; set; }
+
         [Display(Name = "About Me:")]
         public string about { get; set; }
         
@@ -17,8 +33,6 @@ namespace thn.Models
 
         public string tags { get; set; }
 
-        [Key]
-        public string email { get; set; }
     }
 
     public class profileDBContext : DbContext

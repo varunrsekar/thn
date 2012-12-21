@@ -23,16 +23,27 @@ namespace thn.Controllers
         public ActionResult Index(profile prof)
         {
             prof.email = User.Identity.Name;
-            profile profileExists = dbprof.profiles.Where(b => b.email == prof.email).FirstOrDefault();
-
-            if (profileExists != null)
+            if (ModelState.IsValid)
             {
-                dbprof.profiles.Add(prof);
-                dbprof.SaveChanges();
-                return RedirectToAction("Index", "dashboard");
+
+                profile profileExists = dbprof.profiles.Where(b => b.email == prof.email).FirstOrDefault();
+                    
+                if (profileExists != null)
+                {
+                    profileExists.about = prof.about;
+                    profileExists.country = prof.country;
+                    profileExists.firstName = prof.firstName;
+                    profileExists.lastName = prof.lastName;
+                    profileExists.searchRadius = prof.searchRadius;
+                    profileExists.tags = prof.tags;
+                    profileExists.zipcode = prof.zipcode;
+
+                    dbprof.SaveChanges();
+                    return RedirectToAction("Index", "dashboard");
+                }
+                else
+                    ModelState.AddModelError("", "There is no user with this email address.");
             }
-            else
-                ModelState.AddModelError("", "There is no user with this email address.");
             return View();
         }
 
