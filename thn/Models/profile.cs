@@ -13,9 +13,9 @@ namespace thn.Models
         public string about { get; set; }
         
         [Display(Name = "Search Radius:")]
-        public string searchRadius { get; set; }
+        public int searchRadius { get; set; }
 
-        public IList<string> tags { get; set; }
+        public string tags { get; set; }
 
         [Key]
         public string email { get; set; }

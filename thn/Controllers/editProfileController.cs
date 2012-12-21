@@ -22,6 +22,7 @@ namespace thn.Controllers
         [HttpPost]
         public ActionResult Index(profile prof)
         {
+            prof.email = User.Identity.Name;
             profile profileExists = dbprof.profiles.Where(b => b.email == prof.email).FirstOrDefault();
 
             if (profileExists != null)
