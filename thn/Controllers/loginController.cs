@@ -57,7 +57,7 @@ namespace thn.Controllers
                 else
                     ModelState.AddModelError("", "Username or password does not exist.");
             }
-            else
+            else if (userExists != null)
             {
 
                 if ((userExists.password == user.password) && (userExists.email == user.email))

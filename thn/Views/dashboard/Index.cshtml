@@ -4,7 +4,10 @@
     ViewBag.Title = "Dashboard";
 }
 <div id="content">
-    <h2>@Html.ActionLink("My Dashboard","","dashboard") | @Html.ActionLink("My Profile","","profile")</h2>
+    <div id="nav-panel">
+        @Html.ActionLink("My Dashboard","","dashboard")<br />
+        @Html.ActionLink("My Profile","","profile")
+    </div>
 </div>
 
 

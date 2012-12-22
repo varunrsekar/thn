@@ -51,19 +51,33 @@ table {
     color: #083157;
 }
 
+#nav-panel {
+    float: left;
+    margin-top:0;
+    margin-left: 0;
+    width:10%;
+    border-right: groove 2px;
+    font-size: 1em;
+}
+
+#nav-panel a {
+    display: block;
+    width: 90%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 5px;
+    text-decoration: none;
+}
+
+#nav-panel a:hover {
+    background: #083157;
+    color: #FFFFFF;
+}
+
 h2 {
     font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
     color: #083157;
     font-weight: 600;
-}
-
-h2 a{
-    text-decoration: none;
-    color: #083157;
-}
-
-h2 a:hover {
-    border-bottom: solid 2px #083157;
 }
 
 
