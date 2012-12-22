@@ -9,7 +9,7 @@ namespace thn.Controllers
 {
     public class profileController : Controller
     {
-        private profileDBContext dbprof = new profileDBContext();
+        private accountDBContext dbprof = new accountDBContext();
 
         //
         // GET: /EditProfile/

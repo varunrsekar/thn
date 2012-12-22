@@ -11,7 +11,7 @@ namespace thn.Controllers
 {
     public class cpanelController : Controller
     {
-        private orgDBContext db = new orgDBContext();
+        private accountDBContext db = new accountDBContext();
 
         public ActionResult Index()
         {

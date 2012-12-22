@@ -59,8 +59,4 @@ namespace thn.Models
         public string comparePassword { get; set; }
 
     }
-    public class orgDBContext : DbContext
-    {
-        public DbSet<org> orgs { get; set; }
-    }
 }

@@ -13,8 +13,8 @@ namespace thn.Controllers
 
     public class accountController : Controller
     {
-        private userDBContext dbuser = new userDBContext();
-        private orgDBContext dborg = new orgDBContext();
+        private accountDBContext dbuser = new accountDBContext();
+        private accountDBContext dborg = new accountDBContext();
 
         private static string encryptPassword(string password)
         {

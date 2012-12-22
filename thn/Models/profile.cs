@@ -35,8 +35,10 @@ namespace thn.Models
 
     }
 
-    public class profileDBContext : DbContext
+    public class accountDBContext : DbContext
     {
         public DbSet<profile> profiles { get; set; }
+        public DbSet<org> orgs { get; set; }
+        public DbSet<user> users { get; set; }
     }
 }

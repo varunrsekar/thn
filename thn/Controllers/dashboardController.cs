@@ -11,7 +11,7 @@ namespace thn.Controllers
 {
     public class dashboardController : Controller
     {
-        private userDBContext db = new userDBContext();
+        private accountDBContext db = new accountDBContext();
 
         //
         // GET: /dashboard/

@@ -12,8 +12,8 @@ namespace thn.Controllers
 {
     public class loginController : Controller
     {
-        private userDBContext dbuser = new userDBContext();
-        private orgDBContext dborg = new orgDBContext();
+        private accountDBContext dbuser = new accountDBContext();
+        private accountDBContext dborg = new accountDBContext();
         //
         // GET: /login/
 

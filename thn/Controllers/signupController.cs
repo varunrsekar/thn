@@ -11,9 +11,9 @@ namespace thn.Controllers
 {
     public class signupController : Controller
     {
-        private userDBContext dbuser = new userDBContext();
-        private orgDBContext dborg = new orgDBContext();
-        private profileDBContext dbprof = new profileDBContext();
+        private accountDBContext dbuser = new accountDBContext();
+        private accountDBContext dborg = new accountDBContext();
+        private accountDBContext dbprof = new accountDBContext();
 
         private static string encryptPassword(string password)
         {
